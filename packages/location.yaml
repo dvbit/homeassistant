@@ -23,6 +23,8 @@
 ##                                                                                      ##
 ##========================================================================================
 
+#Who
+
 person:
   # Nicola
   - name: 'Nicola'
@@ -49,6 +51,60 @@ person:
     device_trackers:
       - device_tracker.life360_alessandro_reina
 
+
+group:
+  famiglia:
+    name: Famiglia
+    entities:
+      - person.nicola
+      - person.giovanna
+      - person.beatrice
+      - person.alessandro
+
+  
+# 
+#   _____                     
+#  |__  /___  _ __   ___  ___ 
+#    / // _ \| '_ \ / _ \/ __|
+#   / /| (_) | | | |  __/\__ \
+#  /____\___/|_| |_|\___||___/
+#                             
+# 
+
+##========================================================================================
+##                                                                                      ##
+##                 Zones https://www.home-assistant.io/components/zone/                 ##
+##                     https://my.home-assistant.io/redirect/zones/                     ##
+##                                                                                      ##
+##========================================================================================
+
+# Where Outside
+
+zone:
+  - name: !secret City_name
+    latitude: !secret City_latitude
+    longitude: !secret City_longitude
+    icon: mdi:home-city
+    radius: 100
+  - name: !secret School_Son_name
+    latitude: !secret School_Son_latitude
+    longitude: !secret School_Son_longitude
+    radius: 100
+    icon: mdi:chair-school
+  - name: !secret School_Daughter_name
+    latitude: !secret School_Daughter_latitude
+    longitude: !secret School_Daughter_longitude
+    radius: 100
+    icon: mdi:chair-school
+  - name: !secret Casa_SisterInLaw_name
+    latitude: !secret Casa_SisterInLaw_latitude
+    longitude: !secret Casa_SisterInLaw_longitude
+    radius: 100
+    icon: mdi:home-circle
+
+# Where : at home or out?
+
+# Sensor for Home presence
 sensor:
   - platform: template
     sensors:
@@ -97,48 +153,4 @@ sensor:
             mdi:close-box-outline
           {% endif %}
 
-group:
-  famiglia:
-    name: Famiglia
-    entities:
-      - person.nicola
-      - person.giovanna
-      - person.beatrice
-      - person.alessandro
-  
-# 
-#   _____                     
-#  |__  /___  _ __   ___  ___ 
-#    / // _ \| '_ \ / _ \/ __|
-#   / /| (_) | | | |  __/\__ \
-#  /____\___/|_| |_|\___||___/
-#                             
-# 
-
-##========================================================================================
-##                                                                                      ##
-##                 Zones https://www.home-assistant.io/components/zone/                 ##
-##                     https://my.home-assistant.io/redirect/zones/                     ##
-##                                                                                      ##
-##========================================================================================
-zone:
-  - name: !secret City_name
-    latitude: !secret City_latitude
-    longitude: !secret City_longitude
-    icon: mdi:home-city
-    radius: 100
-  - name: !secret School_Son_name
-    latitude: !secret School_Son_latitude
-    longitude: !secret School_Son_longitude
-    radius: 100
-    icon: mdi:chair-school
-  - name: !secret School_Daughter_name
-    latitude: !secret School_Daughter_latitude
-    longitude: !secret School_Daughter_longitude
-    radius: 100
-    icon: mdi:chair-school
-  - name: !secret Casa_SisterInLaw_name
-    latitude: !secret Casa_SisterInLaw_latitude
-    longitude: !secret Casa_SisterInLaw_longitude
-    radius: 100
-    icon: mdi:home-circle
+# Where in the Home (Espresense)

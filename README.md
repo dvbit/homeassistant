@@ -1,2 +1,2 @@
-# ha
-My Configuration
+# home assistant
+Refactored Configuration
