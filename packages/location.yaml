@@ -1,0 +1,144 @@
+# 
+# 88                                                        88
+# 88                                                 ,d     ""
+# 88                                                 88
+# 88           ,adPPYba,    ,adPPYba,  ,adPPYYba,  MM88MMM  88   ,adPPYba,   8b,dPPYba,
+# 88          a8"     "8a  a8"     ""  ""     `Y8    88     88  a8"     "8a  88P'   `"8a
+# 88          8b       d8  8b          ,adPPPPP88    88     88  8b       d8  88       88
+# 88          "8a,   ,a8"  "8a,   ,aa  88,    ,88    88,    88  "8a,   ,a8"  88       88
+# 88888888888  `"YbbdP"'    `"Ybbd8"'  `"8bbdP"Y8    "Y888  88   `"YbbdP"'   88       88
+
+
+##========================================================================================
+##                                                                                      ##
+##                                       Location                                       ##
+##                               Location related sensors                               ##
+##                                                                                      ##
+##========================================================================================
+
+##========================================================================================
+##                                                                                      ##
+##                  https://www.home-assistant.io/integrations/person/                  ##
+##The person integration allows connecting device tracker entities to one or more person entities##
+##                                                                                      ##
+##========================================================================================
+
+person:
+  # Nicola
+  - name: 'Nicola'
+    id: 'Nicola'
+    user_id: !secret persons_nic_user_id
+    device_trackers:
+      - device_tracker.life360_nicola
+  # Giovanna
+  - name: 'Giovanna'
+    id: 'Giovanna'
+    user_id: !secret persons_gio_user_id
+    device_trackers:
+      - device_tracker.life360_giovanna
+  # Beatrice
+  - name: 'Beatrice'
+    id: 'Beatrice'
+    user_id: !secret persons_bea_user_id
+    device_trackers:
+      - device_tracker.telefonobea5
+  # Alessandro
+  - name: 'Alessandro'
+    id: 'Alessandro'
+    user_id: !secret persons_ale_user_id
+    device_trackers:
+      - device_tracker.life360_alessandro_reina
+
+sensor:
+  - platform: template
+    sensors:
+      # home
+      presence_home_status:
+        friendly_name: 'Presenza in Casa'
+        value_template: >-
+          {% if is_state("person.nicola", "home") or is_state("person.giovanna", "home") or is_state("person.beatrice", "home") or is_state("person.alessandro", "home")%}
+            true
+          {% else %}
+            false
+          {% endif %}
+        attribute_templates:
+          Famiglia_a_casa: >-
+            {{ expand('group.famiglia') | selectattr('state', 'eq', 'home') | list | count }}
+          Presenza_Nicola: >-
+            {% if is_state("person.nicola", "home") %}
+              Presente
+            {% else %}
+              Assente
+            {% endif %}
+          Presenza_Giovanna: >-
+            {% if is_state("person.giovanna", "home") %}
+              Presente
+            {% else %}
+              Assente
+            {% endif %}
+          Presenza_Beatrice: >-
+            {% if is_state("person.beatrice", "home") %}
+              Presente
+            {% else %}
+              Assente
+            {% endif %}
+          Presenza_Alessandro: >-
+            {% if is_state("person.alessandro", "home") %}
+              Presente
+            {% else %}
+              Assente
+            {% endif %}
+        icon_template: >-
+          {% if is_state("binary_sensor.presence_home_status", "on") %}
+            mdi:home-import-outline
+          {% elif is_state("binary_sensor.presence_home_status", "off") %}
+            mdi:home-export-outline
+          {% else %}
+            mdi:close-box-outline
+          {% endif %}
+
+group:
+  famiglia:
+    name: Famiglia
+    entities:
+      - person.nicola
+      - person.giovanna
+      - person.beatrice
+      - person.alessandro
+  
+# 
+#   _____                     
+#  |__  /___  _ __   ___  ___ 
+#    / // _ \| '_ \ / _ \/ __|
+#   / /| (_) | | | |  __/\__ \
+#  /____\___/|_| |_|\___||___/
+#                             
+# 
+
+##========================================================================================
+##                                                                                      ##
+##                 Zones https://www.home-assistant.io/components/zone/                 ##
+##                     https://my.home-assistant.io/redirect/zones/                     ##
+##                                                                                      ##
+##========================================================================================
+zone:
+  - name: !secret City_name
+    latitude: !secret City_latitude
+    longitude: !secret City_longitude
+    icon: mdi:home-city
+    radius: 100
+  - name: !secret School_Son_name
+    latitude: !secret School_Son_latitude
+    longitude: !secret School_Son_longitude
+    radius: 100
+    icon: mdi:chair-school
+  - name: !secret School_Daughter_name
+    latitude: !secret School_Daughter_latitude
+    longitude: !secret School_Daughter_longitude
+    radius: 100
+    icon: mdi:chair-school
+  - name: !secret Casa_SisterInLaw_name
+    latitude: !secret Casa_SisterInLaw_latitude
+    longitude: !secret Casa_SisterInLaw_longitude
+    radius: 100
+    icon: mdi:home-circle

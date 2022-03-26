@@ -1,0 +1,236 @@
+#
+#   ____                   __  __           _       _
+#  | __ )  __ _ ___  ___  |  \/  | ___   __| |_   _| | ___  ___
+#  |  _ \ / _` / __|/ _ \ | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+#  | |_) | (_| \__ \  __/ | |  | | (_) | (_| | |_| | |  __/\__ \
+#  |____/ \__,_|___/\___| |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+#
+#
+
+#git
+##========================================================================================
+##                                                                                      ##
+##                                         HTTP                                         ##
+##                   https://www.home-assistant.io/integrations/http/                   ##
+##                                                                                      ##
+##========================================================================================
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret iot_network_cidr 
+    - 172.30.33.0/24
+    - 172.30.32.0/24
+#
+## Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+## http:
+##   base_url: example.duckdns.org:8123
+#http:
+##  api_password: !secret hasspass
+#  base_url: !secret base_url
+#
+
+##========================================================================================
+##                                                                                      ##
+##                                          API                                         ##
+##                    https://www.home-assistant.io/integrations/api/                   ##
+##                                                                                      ##
+##========================================================================================
+api:
+
+##========================================================================================
+#                                   Configuration
+#                     https://www.home-assistant.io/integrations/config/                  ##
+##                     https://my.home-assistant.io/redirect/config/                    ##
+## In questa vista è possibile configurare i componenti e l'Home Assistant.             ##
+##========================================================================================
+
+config:
+
+##========================================================================================
+##                                                                                      ##
+##                                     System Health                                    ##
+##               https://www.home-assistant.io/integrations/system_health/              ##
+##                                                                                      ##
+##========================================================================================
+system_health:
+
+##========================================================================================
+##                                                                                      ##
+##                                        Logbook                                       ##
+##                             View all events in a logbook                             ##
+##                  https://www.home-assistant.io/integrations/logbook/                 ##
+##                   https://my.home-assistant.io/redirect/config/logs                  ##
+##                                                                                      ##
+##========================================================================================
+logbook:
+
+##========================================================================================
+##                                                                                      ##
+##                                        History                                       ##
+##                 Enables support for tracking state changes over time                 ##
+##                  https://www.home-assistant.io/integrations/history/                 ##
+##                    https://my.home-assistant.io/redirect/history/                    ##
+##                                                                                      ##
+##========================================================================================
+history:
+
+##========================================================================================
+##                                                                                      ##
+##                                          Map                                         ##
+##     This offers a map on the frontend to display the location of tracked devices.    ##
+##                    https://www.home-assistant.io/integrations/map/                   ##
+##                                                                                      ##
+##========================================================================================
+map:
+
+##========================================================================================
+##                                                                                      ##
+##                                        Webhook                                       ##
+##Allows you to issue voice commands from the frontend in enabled browsers https://www.home-assistant.io/integrations/conversation/               ####
+##                   https://www.home-assistant.io/integrations/ifttt/                  ##
+##                       https://www.nabucasa.com/config/webhooks/                      ##
+##                                                                                      ##
+##========================================================================================
+#webhook:
+#  conversation: #
+# migration
+
+##========================================================================================
+##                                                                                      ##
+##                                       Zeroconf                                       ##
+##                 https://www.home-assistant.io/integrations/zeroconf/                 ##
+##  The zeroconf integration will scan the network for supported devices and services.  ##
+##                                                                                      ##
+##========================================================================================
+zeroconf:
+
+##========================================================================================
+##                                                                                      ##
+##                                       Discovery                                      ##
+##                 https://www.home-assistant.io/integrations/discovery/                ##
+##Home Assistant can discover and automatically configure zeroconf/mDNS and UPnP devices on your network.##
+##                                                                                      ##
+##========================================================================================
+discovery:
+
+##========================================================================================
+##                                                                                      ##
+##                                         SSDP                                         ##
+##The ssdp “Simple Service Discovery Protocol” (part of UPnP) integration will scan the network for supported devices and services.##
+##                                                                                      ##
+##========================================================================================
+ssdp:
+
+##========================================================================================
+##                                                                                      ##
+##                                      Mobile App                                      ##
+##The Mobile App integration allows Home Assistant mobile apps to easily integrate with Home Assistant.##
+##                https://www.home-assistant.io/integrations/mobile_app/                ##
+##                                                                                      ##
+##========================================================================================
+mobile_app:
+
+##========================================================================================
+##                                                                                      ##
+##                                          iOS                                         ##
+##                    https://www.home-assistant.io/integrations/ios/                   ##
+##The ios integration is used by the Home Assistant Companion App for iOS to store and provide settings for actionable notifications and actions.##
+##                                                                                      ##
+##========================================================================================
+ios:
+
+##========================================================================================
+##                                                                                      ##
+##                                      Wake on LAN                                     ##
+##The wake_on_lan integration enables the ability to send magic packets to Wake on LAN capable devices to turn them on.##
+##                https://www.home-assistant.io/integrations/wake_on_lan/               ##
+##                                                                                      ##
+##========================================================================================
+wake_on_lan:
+
+##========================================================================================
+##                                                                                      ##
+##                                        stream                                        ##
+##  The stream integration provides a way to proxy live streams through Home Assistant. ##
+##                  https://www.home-assistant.io/integrations/stream/                  ##
+##                                                                                      ##
+##========================================================================================
+stream:
+
+##========================================================================================
+##                                                                                      ##
+##               https://www.home-assistant.io/integrations/camera.ffmpeg/              ##
+##The ffmpeg platform allows you to use any video feed as a camera in Home Assistant via FFmpeg.##
+##                                                                                      ##
+##========================================================================================
+ffmpeg:
+#  ffmpeg_bin: /usr/bin/ffmpeg
+
+##========================================================================================
+##                                                                                      ##
+##                                         Image                                        ##
+##                                                                                      ##
+##========================================================================================
+image:
+
+##========================================================================================
+##                                                                                      ##
+##                                     Media Source                                     ##
+##               https://www.home-assistant.io/integrations/media_source/               ##
+##The Media Source integration platform allows integrations to expose media for use inside Home Assistant through the Media Browser panel or through supported media players like Google Cast.##
+##                                                                                      ##
+##========================================================================================
+media_source:
+
+##========================================================================================
+##                                                                                      ##
+##                                        Browser                                       ##
+##The browser integration provides a service to open URLs in the default browser on the host machine.##
+##                  https://www.home-assistant.io/integrations/browser/                 ##
+##                                                                                      ##
+##========================================================================================
+browser:
+
+##========================================================================================
+##                                                                                      ##
+##                                    Color Extractor                                   ##
+##The color_extractor integration will extract the predominant color from a given image and apply that color to a target light.##
+##              https://www.home-assistant.io/integrations/color_extractor/             ##
+##                                                                                      ##
+##========================================================================================
+color_extractor:
+
+##========================================================================================
+##                                                                                      ##
+##                                     Shopping List                                    ##
+##    The shopping_list integration allows you to keep track of shopping list items.    ##
+##               https://www.home-assistant.io/integrations/shopping_list/              ##
+##                                                                                      ##
+##========================================================================================
+shopping_list:
+
+##========================================================================================
+##                                                                                      ##
+##                                     Conversation                                     ##
+##       The conversation integration allows you to converse with Home Assistant.       ##
+##                                                                                      ##
+##========================================================================================
+conversation:
+
+##========================================================================================
+##                                                                                      ##
+##                                   My Home Assistant                                  ##
+##        This integration handles redirects from the My Home Assistant service.        ##
+##                    https://www.home-assistant.io/integrations/my/                    ##
+##                                                                                      ##
+##========================================================================================
+my:
+
+##========================================================================================
+##                                                                                      ##
+##                                          Sun                                         ##
+##The sun integration will use your current location to track if the sun is above or below the horizon.##
+##                    https://www.home-assistant.io/integrations/sun/                   ##
+##                                                                                      ##
+##========================================================================================
+sun:
