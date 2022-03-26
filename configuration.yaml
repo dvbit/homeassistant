@@ -1,0 +1,166 @@
+#
+#   _   _                           _            _     _              _     __  __       _          ____             __ _                       _   _
+#  | | | | ___  _ __ ___   ___     / \   ___ ___(_)___| |_ __ _ _ __ | |_  |  \/  | __ _(_)_ __    / ___|___  _ __  / _(_) __ _ _   _ _ __ __ _| |_(_) ___  _ __
+#  | |_| |/ _ \| '_ ` _ \ / _ \   / _ \ / __/ __| / __| __/ _` | '_ \| __| | |\/| |/ _` | | '_ \  | |   / _ \| '_ \| |_| |/ _` | | | | '__/ _` | __| |/ _ \| '_ \
+#  |  _  | (_) | | | | | |  __/  / ___ \\__ \__ \ \__ \ || (_| | | | | |_  | |  | | (_| | | | | | | |__| (_) | | | |  _| | (_| | |_| | | | (_| | |_| | (_) | | | |
+#  |_| |_|\___/|_| |_| |_|\___| /_/   \_\___/___/_|___/\__\__,_|_| |_|\__| |_|  |_|\__,_|_|_| |_|  \____\___/|_| |_|_| |_|\__, |\__,_|_|  \__,_|\__|_|\___/|_| |_|
+#                                                                                                                         |___/
+#
+ 
+##========================================================================================
+##                                                                                      ##
+##                Basic Setup                                                           ##
+##                https://www.home-assistant.io/docs/configuration/basic/               ##
+##                https://my.home-assistant.io/redirect/general/                        ##
+##                                                                                      ##
+##========================================================================================
+
+homeassistant:
+  name: !secret Casa_name
+  latitude: !secret Casa_latitude
+  longitude: !secret Casa_longitude
+  elevation: !secret Casa_elevation
+  unit_system: metric
+  temperature_unit: C
+  currency: EUR
+  time_zone: !secret Casa_timezone
+  external_url: !secret external_url
+  internal_url: !secret internal_url
+  allowlist_external_dirs:
+    - "/config"
+    - "/media"
+  media_dirs:
+    media: "/media"
+    share: /share
+  legacy_templates: false
+
+##==================================================================================================
+##                                                                                                ##
+##                                       Packages                                                 ##
+##Packages in Home Assistant provide a way to bundle different component’s configuration together.##
+##              https://www.home-assistant.io/docs/configuration/packages/                        ##
+##                                                                                                ##
+##==================================================================================================
+
+  packages: !include_dir_named packages
+
+##========================================================================================
+##                                                                                      ##
+##                                          Map                                         ##
+##     This offers a map on the frontend to display the location of tracked devices     ##
+##                    https://www.home-assistant.io/integrations/map/                   ##
+##                                                                                      ##
+##========================================================================================
+
+map:
+
+#   ##========================================================================================
+#   ##                                                                                      ##
+#   ##                                    Customizations                                    ##
+#   ##  You can use the UI to change the entity_id and friendly name of supported entities. ##
+#   ##         https://www.home-assistant.io/docs/configuration/customizing-devices/        ##
+#   ##                                                                                      ##
+#   ##========================================================================================
+#   customize: !include customize.yaml
+# 
+
+ ##========================================================================================
+ ##                                                                                      ##
+ ##                 https://www.home-assistant.io/integrations/frontend/                 ##
+ ##             This offers the official frontend to control Home Assistant.             ##
+ ##                                                                                      ##
+ ##========================================================================================
+ frontend:
+   themes: !include_dir_merge_named themes/
+   extra_module_url:
+     - /hacsfiles/hass-bha-icons/hass-bha-icons.js 
+
+ 
+# ##========================================================================================
+# ##                                                                                      ##
+# ##                                     lovelace_gen                                     ##
+# ##                 Improve the lovelace yaml parser for Home Assistant.                 ##
+# ##                   https://github.com/thomasloven/hass-lovelace_gen                   ##
+# ##                                                                                      ##
+# ##========================================================================================
+# lovelace_gen:
+# 
+##========================================================================================
+##                                                                                      ##
+##                                      Browser mod                                     ##
+##A Home Assistant integration to turn your browser into a controllable entity - and also an audio player and a security camera (WIP).##
+##                    https://github.com/thomasloven/hass-browser_mod                   ##
+##                                                                                      ##
+##========================================================================================
+browser_mod:
+  prefix: "browser_"
+
+# ##========================================================================================
+# ##                                                                                      ##
+# ##                                       Lovelace                                       ##
+# ##Lovelace is the Home Assistant dashboard. It is a fast, customizable and powerful way for users to manage their home using their mobiles and desktops.##
+# ##                        https://www.home-assistant.io/lovelace/                       ##
+# ##                                                                                      ##
+# ##========================================================================================
+# lovelace: !include lovelace.yaml
+# 
+# 
+# # Python Scripts
+# # https://www.home-assistant.io/integrations/python_script
+# 
+# python_script:
+# 
+# 
+# rest_command:
+#   resetcombipi:
+#     url: "http://combipi.fritz.box:1880/resetcombipi/"
+#   liquifeed:
+#     url: "http://app0.miyare.com:8088/Iseebiz_Server/server.php?cmd=addfeedplan&platform=mail&userid=nicolareina@gmail.com&devid=lsw66190606000003620&feedtime=9:35&feedweight=10&index=0&feedtype=handle&gofeed=no&audio=0&scode=350d6a6d6bb097e8f9aec29fc323da28&appn=iseebiz"
+#     method: POST
+# 
+# ##========================================================================================
+# ##                                                                                      ##
+# ##                                       Owntracks                                      ##
+# ##                 https://www.home-assistant.io/integrations/owntracks                 ##
+# ##                                                                                      ##
+# ##========================================================================================
+# 
+# owntracks:
+
+#
+#    ____             __ _                       _   _
+#   / ___|___  _ __  / _(_) __ _ _   _ _ __ __ _| |_(_) ___  _ __  ___
+#  | |   / _ \| '_ \| |_| |/ _` | | | | '__/ _` | __| |/ _ \| '_ \/ __|
+#  | |__| (_) | | | |  _| | (_| | |_| | | | (_| | |_| | (_) | | | \__ \
+#   \____\___/|_| |_|_| |_|\__, |\__,_|_|  \__,_|\__|_|\___/|_| |_|___/
+#                          |___/
+#
+#
+
+# #device_tracker: !include device_trackers.yaml
+# #group: !include groups.yaml
+# light: !include lights.yaml
+# shell_command: !include shellcommands.yaml
+# yeelight: !include yeelights.yaml
+# switch: !include switches.yaml
+# script: !include scripts.yaml
+# automation: !include automations.yaml
+# scene: !include scenes.yaml
+# sensor: !include sensors.yaml
+# #binary_sensor: !include binary_sensors.yaml
+# ##intent_script: !include intent.yaml
+# media_player: !include media_players.yaml
+# #timer: !include timers.yaml
+# #camera: !include cameras.yaml
+# notify: !include notify.yaml
+# #rest_command: !include restcommands.yaml
+# input_number: !include input_number.yaml
+# input_boolean: !include input_boolean.yaml
+# input_text: !include input_text.yaml
+# #input_select: !include input_select.yaml
+# person: !include persons.yaml
+
+# Text to speech
+tts:
+  - platform: google_translate
+
