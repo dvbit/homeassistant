@@ -18,40 +18,40 @@
 #The panel_custom integration allows you to write your own panels in JavaScript and add them to Home Assistant
 
 panel_iframe:
-  combivox:
-    title: Combivox
-    icon: mdi:alarm-light
-    url: !secret combivox_url
-  opensprinkler:
-    title: OpenSprinkler
-    icon: mdi:fountain
-    url: !secret opensprinkler_url
-  opengarage:
-    title: OpenGarage
-    icon: mdi:garage
-    url: !secret opengarage_url
-  fritzbox:
-    title: FritzBox
-    icon: mdi:wan
-    url: !secret fritz_url
-  homedoor:
-    title: Door
-    icon: mdi:door
-    url: !secret nuki_url
-  zwave:
-    title: zwave
-    icon: mdi:z-wave
-    url: !secret zwave_url
-  zigbee:
-    title: zigbee
-    icon: mdi:zigbee
-    url: !secret zigbee_url
-  esxi:
-    title: Esxi
-    icon: mdi:desktop-classic
-    url: !secret esxi_url
-  magicmirror:
-    title: magicmirror
-    icon: mdi:mirror
-    url: !secret magicmirror_url
+#  combivox:
+#    title: Combivox
+#    icon: mdi:alarm-light
+#    url: !secret combivox_url
+#  opensprinkler:
+#    title: OpenSprinkler
+#    icon: mdi:fountain
+#    url: !secret opensprinkler_url
+#  opengarage:
+#    title: OpenGarage
+#    icon: mdi:garage
+#    url: !secret opengarage_url
+#  fritzbox:
+#    title: FritzBox
+#    icon: mdi:wan
+#    url: !secret fritz_url
+#  homedoor:
+#    title: Door
+#    icon: mdi:door
+#    url: !secret nuki_url
+#  zwave:
+#    title: zwave
+#    icon: mdi:z-wave
+#    url: !secret zwave_url
+#  zigbee:
+#    title: zigbee
+#    icon: mdi:zigbee
+#    url: !secret zigbee_url
+#  esxi:
+#    title: Esxi
+#    icon: mdi:desktop-classic
+#    url: !secret esxi_url
+#  magicmirror:
+#    title: magicmirror
+#    icon: mdi:mirror
+#    url: !secret magicmirror_url
   

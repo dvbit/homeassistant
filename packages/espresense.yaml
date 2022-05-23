@@ -1,0 +1,108 @@
+# 
+#   _____ ____  ____                                    
+#  | ____/ ___||  _ \ _ __ ___  ___  ___ _ __  ___  ___ 
+#  |  _| \___ \| |_) | '__/ _ \/ __|/ _ \ '_ \/ __|/ _ \
+#  | |___ ___) |  __/| | |  __/\__ \  __/ | | \__ \  __/
+#  |_____|____/|_|   |_|  \___||___/\___|_| |_|___/\___|
+#                                                       
+# 
+
+# https://github.com/ESPresense/ESPresense/releases
+
+# Device (Beacon) to Track
+
+sensor:
+# One entry for each beacon you want to track
+  #- platform: mqtt_room
+  #  device_id: "apple:1005:9-26"
+  #  name: 'iWatch Nicola'
+  #  state_topic: 'espresense/rooms'
+  #  timeout: 60
+  #  away_timeout: 120
+
+  - platform: mqtt_room
+    device_id: "exp:20"
+    name: 'iPhone Nicola'
+    state_topic: 'espresense/rooms'
+    timeout: 60
+    away_timeout: 120
+
+  - platform: mqtt_room
+    device_id: "apple:1006:10-7"
+    name: 'iPhone Giovanna'
+    state_topic: 'espresense/rooms'
+    timeout: 60
+    away_timeout: 120
+
+  - platform: mqtt_room
+    device_id: "md:038f:27"
+    name: 'Android Alessandro'
+    state_topic: 'espresense/rooms'
+    timeout: 60
+    away_timeout: 120
+
+#  - platform: mqtt_room
+#    device_id: "telefonoale"
+#    name: 'ESPresense Presence Apple iPhone'
+#    state_topic: 'espresense/rooms'
+#    timeout: 1
+#    away_timeout: 2
+#
+#  - platform: mqtt_room
+#    device_id: "telefonobea"
+#    name: 'ESPresense Presence Apple Watch'
+#    state_topic: 'espresense/rooms'
+#    timeout: 1
+#    away_timeout: 2
+
+
+# Base Stations (Atom Lite)
+
+binary_sensor:
+  - platform: mqtt
+    name: Cucina
+    state_topic: espresense/rooms/cucina/status
+    json_attributes_topic: espresense/rooms/cucina/telemetry
+    payload_on: online
+    payload_off: offline
+    device_class: connectivity
+
+  - platform: mqtt
+    name: Soggiorno
+    state_topic: espresense/rooms/Cucina/status
+    json_attributes_topic: espresense/rooms/soggiorno/telemetry
+    payload_on: online
+    payload_off: offline
+    device_class: connectivity
+
+  - platform: mqtt
+    name: Camera Giovanna e Nicola
+    state_topic: espresense/rooms/cameragiovannaenicola/status
+    json_attributes_topic: espresense/rooms/cameragiovannaenicola/telemetry
+    payload_on: online
+    payload_off: offline
+    device_class: connectivity
+
+  - platform: mqtt
+    name: Bagno Giovanna e Nicola
+    state_topic: espresense/rooms/bagnogiovannaenicola/status
+    json_attributes_topic: espresense/rooms/bagnogiovannaenicola/telemetry
+    payload_on: online
+    payload_off: offline
+    device_class: connectivity
+
+  - platform: mqtt
+    name: Camera Beatrice
+    state_topic: espresense/rooms/camerabeatrice/status
+    json_attributes_topic: espresense/rooms/camerabeatrice/telemetry
+    payload_on: online
+    payload_off: offline
+    device_class: connectivity
+
+  - platform: mqtt
+    name: Camera Alessandro
+    state_topic: espresense/rooms/cameraalessandro/status
+    json_attributes_topic: espresense/rooms/cameraalessandro/telemetry
+    payload_on: online
+    payload_off: offline
+    device_class: connectivity

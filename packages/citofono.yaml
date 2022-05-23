@@ -1,0 +1,45 @@
+# https://github.com/myhomeiot/DahuaVTO
+sensor:
+  - platform: dahua_vto
+    name: Citofono
+    host: !secret Camera_Citofono_fqdn
+    username: !secret Camera_Cancelletto_user
+    password: !secret Camera_Cancelletto_password
+    scan_interval: 5
+
+timer:
+  cancelletto_lock:
+    name: Chiusura Cancelletto
+    icon: mdi:timer
+
+lock:
+  - platform: template
+    unique_id: '0a7476cc-d6c1-40ba-8ae1-606518c3497f'
+    name: Serratura Cancelletto
+    value_template: "{{ not is_state('timer.cancelletto_lock', 'active') }}"
+    optimistic: false
+    lock:
+      - service: dahua_vto.open_door
+        data:
+          entity_id: sensor.citofono
+          channel: 1
+          short_number: HA
+    unlock:
+      - service: dahua_vto.open_door
+        data:
+          entity_id: sensor.citofono
+          channel: 1
+          short_number: HA
+
+automation:
+  - alias: Eventi Citofono
+    mode: queued
+    trigger:
+      - platform: event
+        event_type: dahua_vto
+    action:
+      - service: persistent_notification.create
+        data:
+          title: "{{ trigger.event.data.Code if trigger.event.data.Code is else 'Unknown Code' }}"
+          message: "{{ trigger.event.data }}"
+  

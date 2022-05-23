@@ -164,3 +164,9 @@ browser_mod:
 tts:
   - platform: google_translate
 
+# Example configuration.yaml entry
+evohome:
+  username: !secret evohome_user
+  password: !secret evohome_password
+
+cloud:
