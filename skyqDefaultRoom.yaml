@@ -54,16 +54,6 @@
           source: 'Rai 1'
       turn_off:
         service: script.placeholder
-    skyq_rai2defaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Rai 2 in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Rai 2'
-      turn_off:
-        service: script.placeholder
     skyq_rai3defaultroom:
       value_template: '{{"off"}}'
       friendly_name: 'Rai 3 in the Default Room'
@@ -72,6 +62,16 @@
         data:
           entity_id: media_player.sky_q
           source: 'Rai 3'
+      turn_off:
+        service: script.placeholder
+    skyq_rai2defaultroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Rai 2 in the Default Room'
+      turn_on:
+        service: media_player.select_source
+        data:
+          entity_id: media_player.sky_q
+          source: 'Rai 2'
       turn_off:
         service: script.placeholder
     skyq_rete4hddefaultroom:
@@ -84,16 +84,6 @@
           source: 'Rete 4 HD'
       turn_off:
         service: script.placeholder
-    skyq_canale5hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Canale 5 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Canale 5 HD'
-      turn_off:
-        service: script.placeholder
     skyq_italia1hddefaultroom:
       value_template: '{{"off"}}'
       friendly_name: 'Italia 1 HD in the Default Room'
@@ -102,6 +92,16 @@
         data:
           entity_id: media_player.sky_q
           source: 'Italia 1 HD'
+      turn_off:
+        service: script.placeholder
+    skyq_canale5hddefaultroom:
+      value_template: '{{"off"}}'
+      friendly_name: 'Canale 5 HD in the Default Room'
+      turn_on:
+        service: media_player.select_source
+        data:
+          entity_id: media_player.sky_q
+          source: 'Canale 5 HD'
       turn_off:
         service: script.placeholder
     skyq_la7defaultroom:
@@ -122,275 +122,5 @@
         data:
           entity_id: media_player.sky_q
           source: 'Sky Uno HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyuno_1hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Uno +1 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Uno +1 HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyatlantichddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Atlantic HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Atlantic HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyatlantic_1hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Atlantic +1 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Atlantic +1 HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyseriehddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Serie HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Serie HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyserie_1hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Serie +1 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Serie +1 HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyinvestigationhddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Investigation HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Investigation HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyinvestigation_1hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Investigation +1 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Investigation +1 HD'
-      turn_off:
-        service: script.placeholder
-    skyq_foxhddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Fox HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Fox HD'
-      turn_off:
-        service: script.placeholder
-    skyq_fox_1defaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Fox +1 in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Fox +1'
-      turn_off:
-        service: script.placeholder
-    skyq_crime_invhddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Crime + Inv. HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Crime + Inv. HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyartehddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Arte HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Arte HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skyarte_1hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Arte +1 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Arte +1 HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skynaturehddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Nature HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Nature HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skydocumentaries_1hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Documentaries +1 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Documentaries +1 HD'
-      turn_off:
-        service: script.placeholder
-    skyq_skydocumentarieshddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Sky Documentaries HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Sky Documentaries HD'
-      turn_off:
-        service: script.placeholder
-    skyq_tv8hddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'TV8 HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'TV8 HD'
-      turn_off:
-        service: script.placeholder
-    skyq_blazehddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Blaze HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Blaze HD'
-      turn_off:
-        service: script.placeholder
-    skyq_comedycentraldefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Comedy Central in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Comedy Central'
-      turn_off:
-        service: script.placeholder
-    skyq_comedy_1defaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Comedy +1 in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Comedy +1'
-      turn_off:
-        service: script.placeholder
-    skyq_cielohddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'cielo HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'cielo HD'
-      turn_off:
-        service: script.placeholder
-    skyq_20mediasethddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: '20Mediaset HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: '20Mediaset HD'
-      turn_off:
-        service: script.placeholder
-    skyq_novehddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'NOVE HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'NOVE HD'
-      turn_off:
-        service: script.placeholder
-    skyq_classicahddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Classica HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Classica HD'
-      turn_off:
-        service: script.placeholder
-    skyq_gamberorossohddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Gambero Rosso HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Gambero Rosso HD'
-      turn_off:
-        service: script.placeholder
-    skyq_mtvhddefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'MTV HD in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'MTV HD'
-      turn_off:
-        service: script.placeholder
-    skyq_mtvmusicdefaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'MTV Music in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'MTV Music'
-      turn_off:
-        service: script.placeholder
-    skyq_cine34defaultroom:
-      value_template: '{{"off"}}'
-      friendly_name: 'Cine34 in the Default Room'
-      turn_on:
-        service: media_player.select_source
-        data:
-          entity_id: media_player.sky_q
-          source: 'Cine34'
       turn_off:
         service: script.placeholder
