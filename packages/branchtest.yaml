@@ -1,9 +1,3 @@
-123 vecchia
-
-tetst branch
-
-la main - alias: ""
-  condition: numeric_state
-  entity_id: entity id
-  below: below
-  above: above
+- platform: sun
+  event: sunset
+  offset: "00:00:00"
