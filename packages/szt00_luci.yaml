@@ -1,0 +1,47 @@
+# 
+#    ____           _   _                    _               _   ____                    _                          _____                   ____  _                        
+#   / ___| ___  ___| |_(_) ___  _ __   ___  | |   _   _  ___(_) / ___|  ___   __ _  __ _(_) ___  _ __ _ __   ___   |__  /___  _ __   __ _  |  _ \(_)_   ____ _ _ __   ___  
+#  | |  _ / _ \/ __| __| |/ _ \| '_ \ / _ \ | |  | | | |/ __| | \___ \ / _ \ / _` |/ _` | |/ _ \| '__| '_ \ / _ \    / // _ \| '_ \ / _` | | | | | \ \ / / _` | '_ \ / _ \ 
+#  | |_| |  __/\__ \ |_| | (_) | | | |  __/ | |__| |_| | (__| |  ___) | (_) | (_| | (_| | | (_) | |  | | | | (_) |  / /| (_) | | | | (_| | | |_| | |\ V / (_| | | | | (_) |
+#   \____|\___||___/\__|_|\___/|_| |_|\___| |_____\__,_|\___|_| |____/ \___/ \__, |\__, |_|\___/|_|  |_| |_|\___/  /____\___/|_| |_|\__,_| |____/|_| \_/ \__,_|_| |_|\___/ 
+#                                                                            |___/ |___/                                                                                   
+# 
+
+input_number:
+  szt_01_lum_threshold:
+    name: Soglia Luminosità Tavolo Soggiorno
+    initial: 20
+    min: 0
+    max: 100
+    step: 1
+  
+automation:
+  - id: SZT0_01 Gestione Accensione Luce Tavolo Soggiorno
+    alias: Gestione Accensione Luce Tavolo Soggiorno
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.movimento_tavolo_soggiorno_home_security_motion_detection
+      from: "off"
+      to: "on"
+    condition:
+      - "  {{ states('sensor.movimento_tavolo_soggiorno_illuminance') | int < states('input_number.szt_01_lum_threshold') | int }}"
+    action:
+      - alias: "Accensione Luce Tavolo Soggiorno"
+        service: light.turn_on
+        target:
+          entity_id: light.relay_luce_tavolo_soggiorno    
+  
+  - id: SZT0_02 Gestione Spegnimento Luce Tavolo Soggiorno
+    alias: Gestione Spegnimento Luce Tavolo Soggiorno
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.movimento_tavolo_soggiorno_home_security_motion_detection
+      from: "on"
+      to: "off"
+      for: "00:04:00"
+#    condition:
+    action:
+      - alias: "Accensione Luce Tavolo Soggiorno"
+        service: light.turn_off
+        target:
+          entity_id: light.relay_luce_tavolo_soggiorno    

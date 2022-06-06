@@ -148,14 +148,6 @@ ios:
 ##========================================================================================
 wake_on_lan:
 
-##========================================================================================
-##                                                                                      ##
-##                                        stream                                        ##
-##  The stream integration provides a way to proxy live streams through Home Assistant. ##
-##                  https://www.home-assistant.io/integrations/stream/                  ##
-##                                                                                      ##
-##========================================================================================
-stream:
 
 ##========================================================================================
 ##                                                                                      ##
@@ -234,3 +226,19 @@ my:
 ##                                                                                      ##
 ##========================================================================================
 sun:
+
+
+##========================================================================================
+##                                                                                      ##
+##                                        Stream                                        ##
+##  The stream integration provides a way to proxy live streams through Home Assistant. ##
+##Most users should not need to configure anything or interface with the component directly since it is an internal##
+##                       component used by the camera integration.                      ##
+##                  https://www.home-assistant.io/integrations/stream/                  ##
+##                                                                                      ##
+##========================================================================================
+
+stream:
+  ll_hls: true
+  part_duration: 0.75
+  segment_duration: 6

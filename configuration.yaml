@@ -29,6 +29,7 @@ homeassistant:
   allowlist_external_dirs:
     - "/config"
     - "/media"
+    - "/config/home-assistant_v2.db"
   media_dirs:
     media: "/media"
     share: /share
@@ -170,3 +171,14 @@ evohome:
   password: !secret evohome_password
 
 cloud:
+
+magic_areas:
+
+powercalc:
+
+energy:
+
+logger:
+    default: warning
+#    logs:
+#        custom_components.magic_areas: debug

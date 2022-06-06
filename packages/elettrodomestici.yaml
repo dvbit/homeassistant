@@ -15,6 +15,7 @@
 ##               https://www.home-assistant.io/integrations/home_connect/               ##
 ##                                                                                      ##
 ##========================================================================================
-home_connect:
+home_connect_alt:
   client_id: !secret homeconnectclient_id
   client_secret: !secret homeconnectclient_token
+  language: it
