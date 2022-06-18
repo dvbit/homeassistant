@@ -68,7 +68,7 @@ sensor:
   # Dimensioni Database SQL [Rilevato]
   - platform: filesize
     file_paths:
-      - /config/home-assistant_v2.db
+      - /homeassistant/home-assistant_v2.db
   # Dimensioni Database SQL [Elaborato]
   - platform: template
     sensors:

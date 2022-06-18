@@ -1,9 +1,0 @@
-camera:
-  - platform: xiaomi_cloud_map_extractor
-    host: !secret viomivacuum_fqdn
-    token: !secret viomivacuum_token
-    username: !secret xiaomi_user
-    password: !secret xiaomi_password
-    draw: ['all']
-    attributes:
-      - calibration_points
