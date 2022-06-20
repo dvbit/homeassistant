@@ -70,31 +70,31 @@ sensor:
     file_paths:
       - /homeassistant/home-assistant_v2.db
   # Dimensioni Database SQL [Elaborato]
-  - platform: template
-    sensors:
-      recorder_sql_database_size:
-        friendly_name: "Dimensioni Database"
-        value_template: >-
-          {% if states.sensor.home_assistant_v2_db.state %}
-            {% if states.sensor.home_assistant_v2_db.state | float >= 0 %}
-              {{ ( states.sensor.home_assistant_v2_db.state | float / 1000 ) | round(2) }}
-            {% else %}
-              Errore
-            {% endif %}
-          {% else %}
-            Errore
-          {% endif %}
-        unit_of_measurement: 'GB'
-        icon_template: >-
-          {% if states.sensor.home_assistant_v2_db.state %}
-            {% if states.sensor.home_assistant_v2_db.state | float >= 0 %}
-              mdi:database
-            {% else %}
-              mdi:database-remove
-            {% endif %}
-          {% else %}
-            mdi:database-remove
-          {% endif %}
+#  - platform: template
+#    sensors:
+#      recorder_sql_database_size:
+#        friendly_name: "Dimensioni Database"
+#        value_template: >-
+#          {% if states.sensor.home_assistant_v2_db.state %}
+#            {% if states.sensor.home_assistant_v2_db.state | float >= 0 %}
+#              {{ ( states.sensor.home_assistant_v2_db.state | float / 1000 ) | round(2) }}
+#            {% else %}
+#              Errore
+#            {% endif %}
+#          {% else %}
+#            Errore
+#          {% endif %}
+#        unit_of_measurement: 'GB'
+#        icon_template: >-
+#          {% if states.sensor.home_assistant_v2_db.state %}
+#            {% if states.sensor.home_assistant_v2_db.state | float >= 0 %}
+#              mdi:database
+#            {% else %}
+#              mdi:database-remove
+#            {% endif %}
+#          {% else %}
+#            mdi:database-remove
+#          {% endif %}
   # -------------------------------------------------------------------------------------------------------------------
 
 # Automations
