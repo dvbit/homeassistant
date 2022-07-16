@@ -26,9 +26,11 @@ homeassistant:
   time_zone: !secret Casa_timezone
   external_url: !secret external_url
   internal_url: !secret internal_url
+  whitelist_external_dirs:
+    - /config/www  
+    - /config
   allowlist_external_dirs:
-    - "/config"
-    - "/media"
+    - /config/www
   media_dirs:
     media: "/media"
     share: /share
@@ -102,8 +104,11 @@ browser_mod:
 ##                        https://www.home-assistant.io/lovelace/                       ##
 ##                                                                                      ##
 ##========================================================================================
-# lovelace: !include lovelace.yaml
-# 
+lovelace: 
+  #resources: !include resources.yaml
+  mode: storage
+  dashboards: !include ui-lovelace.yaml
+
 ##========================================================================================
 ##                                                                                      ##
 ##                                                                                      ##
@@ -393,7 +398,7 @@ cloud:
 ##                                                                                      ##
 ##========================================================================================
 
-magic_areas:
+#magic_areas:
 
 ##========================================================================================
 ##                                                                                      ##
@@ -513,7 +518,7 @@ system_health:
 #
 
 # #device_tracker: !include device_trackers.yaml
-# #group: !include groups.yaml
+group: !include gruppi.yaml
 # light: !include lights.yaml
 # shell_command: !include shellcommands.yaml
 # yeelight: !include yeelights.yaml

@@ -1,0 +1,46 @@
+
+# 
+#   _                   _                
+#  | |    _____   _____| | __ _  ___ ___ 
+#  | |   / _ \ \ / / _ \ |/ _` |/ __/ _ \
+#  | |__| (_) \ V /  __/ | (_| | (_|  __/
+#  |_____\___/ \_/ \___|_|\__,_|\___\___|
+#                                        
+# 
+
+lovelace-tablet:
+  title: Tablet
+  mode: yaml
+  icon: mdi:tablet
+  show_in_sidebar: true
+  filename: lovelace-tablet.yaml
+lovelace-mobile:
+  title: mobile
+  mode: yaml
+  icon: mdi:cellphone
+  show_in_sidebar: true
+  filename: lovelace-mobile.yaml
+lovelace-mirror:
+  title: mirror
+  mode: yaml
+  icon: mdi:mirror
+  show_in_sidebar: true
+  filename: lovelace-mirror.yaml
+lovelace-testlab:
+  title: testlab
+  mode: yaml
+  icon: mdi:mirror
+  show_in_sidebar: true
+  filename: lovelace-testlab.yaml
+lovelace-sak:
+  title: sakmio
+  mode: yaml
+  icon: mdi:knife
+  show_in_sidebar: true
+  filename: lovelace-sak.yaml
+lovelace-ska:
+  title: sak
+  mode: yaml
+  icon: mdi:mirror
+  show_in_sidebar: true
+  filename: sak-examples-dashboard.yaml

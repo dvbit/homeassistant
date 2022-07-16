@@ -1,0 +1,66 @@
+#################################################################
+#                                                               # 
+#             Swiss Army Knife examples dashboard (RC)          #
+#                                                               #
+#             Created: 2021.12.05 (up to Beta 3)                #
+#             Created: 2022.06.05 (from RC 1 onwards)           #
+#                                                               #
+#################################################################
+  
+# Decluttering Templates
+decluttering_templates:
+  !include lovelace/decluttering_templates/decluttering_templates.yaml
+
+# Swiss Army Knife Templates
+#
+# The system templates come with the HACS install and can be updated
+# with a new release. That part is automatic!
+sak_sys_templates:
+  !include www/community/swiss-army-knife-card/sak_templates.yaml
+
+# The user templates are created by the user, and won't be updated 
+# with a new release. If changes are required, then the user has to
+# update the template configuration files.
+sak_user_templates:
+  !include lovelace/sak_templates/sak_templates.yaml
+title: sak
+views:
+  - path: sak
+    title: sak
+    cards:
+    - type: 'custom:swiss-army-knife-card'
+      aspectratio: 1/1
+      entities: 
+        - entity: light.luce_cucina_2
+          name: Cucina
+        - entity: light.luce_cucina_2
+          attribute: brightness
+          name: Cucina2
+      layout:
+        toolsets:
+          - toolset: first
+            template: 
+              name: toolset_light_button_slider3_nm
+              variables:
+                - var_entity_index: 0
+                - var_entity_index: 1
+    - type: 'custom:swiss-army-knife-card'
+      aspectratio: 1/1
+      entities: 
+        - entity: sensor.temperature
+      layout:
+        toolsets:
+          - toolset: second
+            template: 
+              name: toolset-arc180-sparklinebar24
+              variables:
+                - var_entity_index: 0
+
+              
+#          - toolset: second
+#            template: 
+#              name: toolset_light_button_slider_nm
+#              variables:
+#                - var_entity_index: 1
+#                - var_toolset_position_cy: 
+    

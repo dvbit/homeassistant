@@ -1,0 +1,89 @@
+- url: /hacsfiles/apexcharts-card.js
+  type: module
+- url: /hacsfiles/bar-card.js
+  type: module
+- url: /hacsfiles/bignumber-card.js
+  type: module
+- url: /hacsfiles/bignumber-card.js
+  type: module
+- url: /hacsfiles/button-card.js
+  type: module
+- url: /hacsfiles/custom-brand-icons.js
+  type: module
+- url: /hacsfiles/custom-icons.js
+  type: module
+- url: /hacsfiles/decluttering-card.js
+  type: module
+- url: /hacsfiles/harmony-card.js
+  type: module
+- url: /hacsfiles/history-explorer-card.js
+  type: module
+- url: /hacsfiles/frigate-hass-card.js
+  type: module
+- url: /hacsfiles/Home-Assistant-Lovelace-HTML-Jinja2-Template-card.js
+  type: module
+- url: /hacsfiles/hass-hue-icons.js
+  type: module
+- url: /hacsfiles/home-assistant-sun-card.js
+  type: module
+- url: /hacsfiles/logbook-card.js
+  type: module
+- url: /hacsfiles/lovelace-auto-entities.js
+  type: module
+- url: /hacsfiles/lovelace-card-tools.js
+  type: module
+- url: /hacsfiles/lovelace-layout-card.js
+  type: module
+- url: /hacsfiles/lovelace-more-info-card.js
+  type: module
+- url: /hacsfiles/mushroom.js
+  type: module
+- url: /hacsfiles/lovelace-plotly-graph-card.js
+  type: module
+- url: /hacsfiles/lovelace-rpi-monitor-card.js
+  type: module
+- url: /hacsfiles/lovelace-slider-entity-row.js
+  type: module
+- url: /hacsfiles/lovelace-state-switch.js
+  type: module
+- url: /hacsfiles/lovelace-time-picker-card.js
+  type: module
+- url: /hacsfiles/lovelace-xiaomi-vacuum-card.js
+  type: module
+- url: /hacsfiles/mini-graph-card.js
+  type: module
+- url: /hacsfiles/mini-media-player.js
+  type: module
+- url: /hacsfiles/person-entity-card.js
+  type: module
+- url: /hacsfiles/lovelace-xiaomi-vacuum-card.js
+  type: module
+- url: /hacsfiles/scheduler-card.js
+  type: module
+- url: /hacsfiles/select-list-card.js
+  type: module
+- url: /hacsfiles/sidebar-card.js
+  type: module
+- url: /hacsfiles/simple-thermostat.js
+  type: module
+- url: /hacsfiles/sip-hass-card.js
+  type: module
+- url: /hacsfiles/slider-button-card.js
+  type: module
+- url: /hacsfiles/swiss-army-knife-card/swiss-army-knife-card.js
+  type: module
+- url: /hacsfiles/timer-bar-card.js
+  type: module
+- url: /hacsfiles/uptime-card.js
+  type: module
+- url: /hacsfiles/vertical-stack-in-card.js
+  type: module
+
+
+
+
+
+
+
+
+

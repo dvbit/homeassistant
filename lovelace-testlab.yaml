@@ -1,0 +1,88 @@
+#sidebar:
+#  sidebarMenu:
+#    - action: navigate
+#      navigation_path: "/lovelace/mirror"
+#      name: "mirror"
+#      active: true
+#    - action: navigate
+#      navigation_path: "/lovelace/mobile"
+#      name: "mobile"
+#    - action: navigate
+#      navigation_path: "/lovelace/tablet"
+#      name: "tablet"
+#    - action: toggle
+#      entity: light.cespuglio_divano
+#      name: Cespu
+#      state: light.cespuglio_divano
+#      icon: mdi:led-strip-variant
+
+button_card_templates:
+  sleek_label:
+    variables:
+      seg1: "var_seg1"
+      seg2: "var_seg2"
+      name: |
+        [[[
+          if (entity.state == 'on')
+          {
+            var stato ='<span style="color:lightyellow;">planet</span>'
+          } else {
+            var stato ='<span style="color:black;">planet</span>'
+          }
+          return"luce"+stato;
+        ]]]
+
+title: TestLabOne
+views:
+  - path: testlab
+    title: Test Lab
+    type: masonry
+    cards:
+    - type: custom:button-card
+      entity: light.lampada_planet
+      size: 20px
+      card_size: 10px
+      styles:
+        card:
+          - border-radius: 10px;
+          - background: linear-gradient(315deg, #cacaca, #f0f0f0);
+        grid:
+          - grid-template-areas: '"sleeklabel i"'   
+          - grid-template-rows: min-content min-content 
+          - grid-template-columns: min-content min-content    
+      show_icon: true
+      show_name: false
+      show_label: false
+      state:
+        - value: 'on'
+          styles:
+            card:
+              - border-radius: 0px;
+              - background: linear-gradient(315deg, #cacaca, #f0f0f0);
+              - box-shadow:  -1px -1px 10px #dedede, 16px 16px 0px #e2e2e2;
+        - value: 'off'
+          styles:
+            card:
+              - border-radius: 0px;
+              - background: linear-gradient(315deg, #cacaca, #f0f0f0);
+              - box-shadow:  0px 0px 1px #dedede, 16px 16px 0px #e2e2e2;
+      custom_fields:
+        sleeklabel: |
+          [[[
+            if (entity.state == 'on')
+            {
+              var stato ='<span style="color:yellow;">Planet</span>'
+            } else {
+              var stato ='<span style="color:white;">Planet</span>'
+            }
+            return'<span style="color:grey;">Lampada</span>'+stato;
+          ]]]
+  - path: testlab2
+    title: Test Lab2
+    cards:
+      - type: entities
+        entities:
+          - entity: switch.farettiesternocabina
+          - entity: switch.farettiinternocabina
+
+

@@ -1,0 +1,51 @@
+automation:
+  - id: testonoff1
+    alias: testonoff1
+    trigger: 
+      - platform: state
+        entity_id: switch.cucina_luce_cucina_e_led_pensili_switch_1
+        from: "on"
+        to: "off"
+    condition: 
+      condition: numeric_state
+      entity_id: light.luce_cucina_2
+      attribute: brightness
+      above: 0
+    action:
+      - alias: "turnon"
+        service: switch.turn_on
+        target:
+          entity_id: switch.cucina_luce_cucina_e_led_pensili_switch_1
+      - delay:
+          seconds: 0.2
+      - alias: "lowlight"
+        service: light.turn_on
+        data:
+          brightness: 0
+        target:
+          device_id: 028aa40004d06a74fd961681197f55ea
+  - id: testonoff2
+    alias: testonoff2
+    trigger: 
+      - platform: state
+        entity_id: switch.cucina_luce_cucina_e_led_pensili_switch_1
+        from: "on"
+        to: "off"
+    condition: 
+      condition: numeric_state
+      entity_id: light.luce_cucina_2
+      attribute: brightness
+      above: 0
+    action:
+      - alias: "turnon"
+        service: switch.turn_on
+        target:
+          entity_id: switch.cucina_luce_cucina_e_led_pensili_switch_1
+      - delay:
+          seconds: 0.2
+      - alias: "lowlight"
+        service: light.turn_on
+        data:
+          brightness: 255
+        target:
+          device_id: 028aa40004d06a74fd961681197f55ea

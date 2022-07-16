@@ -1,2 +1,22 @@
-
-# test
+'1657056090088':
+  alias: New Script
+  sequence:
+  - type: turn_off
+    device_id: 028aa40004d06a74fd961681197f55ea
+    entity_id: light.luce_cucina_2
+    domain: light
+'1657056130583':
+  alias: New Script
+  sequence:
+  - type: turn_off
+    device_id: 028aa40004d06a74fd961681197f55ea
+    entity_id: light.luce_cucina_2
+    domain: light
+spegni:
+  alias: spegni
+  sequence:
+  - type: turn_off
+    device_id: 028aa40004d06a74fd961681197f55ea
+    entity_id: light.luce_cucina_2
+    domain: light
+  mode: single

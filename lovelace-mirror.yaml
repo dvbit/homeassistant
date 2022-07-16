@@ -1,0 +1,173 @@
+sidebar:
+  title: TheReinaS HomE
+  clock: true
+  date: true
+  dateFormat: DD MMMM YYYY
+  width:
+    mobile: 0
+    tablet: 25
+    desktop: 20
+  sidebarMenu:
+    - action: navigate
+      navigation_path: "/lovelace-mirror/0"
+      name: "luci"
+      icon: mdi-lightbulb-group
+      active: true
+    - action: navigate
+      navigation_path: "/lovelace-mirror/2"
+      name: "clima"
+      icon: mdi-home-thermometer
+    - action: navigate
+      navigation_path: "/lovelace-mirror/3"
+      name: "sicurezza"
+      icon: mdi-security
+    - action: navigate
+      navigation_path: "/lovelace-mirror/4"
+      name: "media"
+      icon: mdi-movie
+    - action: navigate
+      navigation_path: "/lovelace-mirror/5"
+      name: "consumi"
+      icon: mdi-solar-power
+#    - action: toggle
+#      entity: light.cespuglio_divano
+#      name: Cespu
+#      state: light.cespuglio_divano
+#      icon: mdi:led-strip-variant
+  template: |
+    <li>
+      {% if now().hour  < 6 %} Buonanotte 
+      {% elif now().hour < 13 %} Buongiorno 
+      {% elif now().hour < 20 %} Buonpomeriggio
+      {% elif now().hour < 23 %} Buonasera
+      {% else %} Buonanotte  {% endif %}
+    </li>
+    <li>La temperatura esterna è di
+    {{states('sensor.outdoor_temperature')}} gradi </li> <li>The forecast today
+    is currently {{states('sensor.weather_condition')}}</li>
+    <li>{% if states('sensor.number_of_lights_on') | float > 0 %} <li>There are
+    currently {{states('sensor.number_of_lights_on')}} lights on</li> {% endif
+    %}
+  style: |
+    :host {
+        --sidebar-background: #FFF;
+        --sidebar-text-color: #000;
+        --face-color: #FFF;
+        --face-border-color: #FFF;
+        --clock-hands-color: #000;
+        --clock-seconds-hand-color: #FF4B3E;
+        --clock-middle-background: #FFF;
+    }
+kiosk_mode:
+  hide_header: true
+  hide_sidebar: false
+
+popup_cards:
+  climate.temp:
+    title: ""
+    style:
+      position: fixed
+      z-index: 999
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      display: block
+      align-items: center
+      justify-content: center
+      background: rgba(0, 0, 0, 0.8)
+      flex-direction: column
+      margin: 0
+      "--iron-icon-fill-color": "#FFF"
+  light.ts:
+    title: "Tavolo Soggiorno"      
+    card:
+      type: custom:light-popup-card
+      entity: light.luce_tavolo_soggiorno    
+        
+views:
+  - title: luci
+    path: luci
+    icon: mdi-lightbulb-group
+    panel: true
+    cards:
+        # The markdown card will render markdown text.
+      - type: "custom:homekit-card"
+        statePositionTop: true
+        entities:
+          - title: Soggiorno
+            popup:
+              type: custom:light-popup-card          
+            entities: 
+              - entity: light.cespuglio_divano
+              - entity: light.cespuglio_ingresso
+              - entity: switch.lampada_planet
+              - entity: light.tavolo_soggiorno
+                hold_action:
+                  action: popup
+                  entity: light.tavolo_soggiorno
+              - entity: light.luce_tavolo_soggiorno
+              - entity: climate.soggiorno
+          - title: Cucina 
+            entities:
+              - entity: light.luce_cucina
+              - entity: light.cucina_onoff
+              - entity: light.ledpensili
+          - title: Camera Giovanna e Nicola
+            entities:
+              - entity: light.faretti_idromassaggio
+              - entity: light.faretti_letto
+              - entity: light.lampada_comodino_nicola
+              - entity: light.lampada_sale_camera_da_letto                      
+              - entity: light.led_termoarredo_camera_da_letto                     
+              - entity: light.faretti_interno_cabina
+              - entity: light.faretti_esterno_cabina
+          - title: Camera
+            entities:
+              - entity: camera.telecameraingresso       
+              - card: custom:mini-graph-card                
+                cardOptions:
+                  entities:
+                    - sensor.luminosita_esterna
+                cardStyle: |
+                  .header {
+                    padding: 0;
+                  }
+                  .header .icon {
+                      color: #f7d959;
+                  }
+                  .states {
+                    padding: 0;
+                  }
+                  .states .state .state__value {
+                    font-size:7px;
+                  }
+  - title: clima
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: clima
+        content: >
+          Pannello **clima**.
+
+  - title: sicurezza
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: sicurezza
+        content: >
+          Pannello **Sicurezza**.
+  - title: media
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: media
+        content: >
+          Pannello **media**.
+  - title: consumi
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: consumi
+        content: >
+          Pannello **consumi**.

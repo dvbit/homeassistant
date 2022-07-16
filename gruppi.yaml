@@ -1,0 +1,376 @@
+# 
+#    ____                        _  
+#   / ___|_ __ _   _ _ __  _ __ (_) 
+#  | |  _| '__| | | | '_ \| '_ \| | 
+#  | |_| | |  | |_| | |_) | |_) | | 
+#   \____|_|   \__,_| .__/| .__/|_| 
+#                   |_|   |_|       
+# 
+
+ 
+                                   
+# 
+#   ____            _       
+#  |  _ \ ___  _ __| |_ ___ 
+#  | |_) / _ \| '__| __/ _ \
+#  |  __/ (_) | |  | ||  __/
+#  |_|   \___/|_|   \__\___|
+#                           
+# 
+
+
+##========================================================================================
+##                                                                                      ##
+##                                      Ingressi casa                                   ##
+##                                                                                      ##
+##========================================================================================
+  ingressi_casa:
+    name: Ingressi Casa
+    entities:
+      - binary_sensor.contatto_cancello_any
+      - binary_sensor.porta_casa_contact
+      - binary_sensor.basculante_garage
+
+#   Porta Blindata Sotto
+# 
+#   ____            _         ___       _                       
+#  |  _ \ ___  _ __| |_ ___  |_ _|_ __ | |_ ___ _ __ _ __   ___ 
+#  | |_) / _ \| '__| __/ _ \  | || '_ \| __/ _ \ '__| '_ \ / _ \
+#  |  __/ (_) | |  | ||  __/  | || | | | ||  __/ |  | | | |  __/
+#  |_|   \___/|_|   \__\___| |___|_| |_|\__\___|_|  |_| |_|\___|
+#                                                               
+# 
+  porte_interne:
+    name: Porte Interne
+    entities:
+      - binary_sensor.porta_bagno_beatrice_e_alessandro_contact
+      - binary_sensor.porta_bagno_giovanna_e_nicola_contact
+      - binary_sensor.porta_garage_contact
+      - binary_sensor.porta_camera_alessandro_contact
+      - binary_sensor.porta_camera_beatrice_contact
+      - binary_sensor.porta_scale_taverna_contact
+
+# 
+#   _____ _                 _            
+#  |  ___(_)_ __   ___  ___| |_ _ __ ___ 
+#  | |_  | | '_ \ / _ \/ __| __| '__/ _ \
+#  |  _| | | | | |  __/\__ \ |_| | |  __/
+#  |_|   |_|_| |_|\___||___/\__|_|  \___|
+#                                        
+# 
+
+##========================================================================================
+##                                                                                      ##
+##                                     Finestre Casa                                    ##
+##                                                                                      ##
+##========================================================================================
+  finestre_casa:
+    name: Finestre Casa
+    icon: mdi:blinds-vertical
+    entities:
+      - binary_sensor.porta_finestra_soggiorno_taverna_baldini_contact
+      - binary_sensor.porta_finestra_soggiorno_taverna_alfonsi_contact
+      - binary_sensor.porta_finestra_cucina_contact
+      - binary_sensor.finestra_camera_giovanna_e_nicola
+      - cover.vasistas_cabina
+      - binary_sensor.porta_finestra_soggiorno_giardino_contact
+      - binary_sensor.porta_finestra_soggiorno_divano_contact
+      - binary_sensor.finestra_camera_alessandro_contact #
+      - binary_sensor.porta_finestra_camera_alessandro_contact
+      - binary_sensor.finestra_camera_beatrice_contact #
+      - binary_sensor.finestra_bagno_beatrice_e_alessandro_contact
+
+##========================================================================================
+##                                                                                      ##
+##                                        Taverna                                       ##
+##                                                                                      ##
+##========================================================================================
+  finestre_taverna:
+    name: Finestre Taverna
+    icon: mdi:blinds-vertical
+    entities:
+      - binary_sensor.porta_finestra_soggiorno_taverna_baldini_contact
+      - binary_sensor.porta_finestra_soggiorno_taverna_alfonsi_contact
+
+##========================================================================================
+##                                                                                      ##
+##                                      Piano Terra                                     ##
+##                                                                                      ##
+##========================================================================================
+  finestre_piano_terra:
+    name: Finestre Piano Terra
+    icon: mdi:blinds-vertical
+    entities:
+      - binary_sensor.porta_finestra_cucina_contact
+      - binary_sensor.finestra_camera_giovanna_e_nicola
+      - cover.vasistas_cabina
+      - binary_sensor.porta_finestra_soggiorno_giardino_contact
+      - binary_sensor.porta_finestra_soggiorno_divano_contact
+
+##========================================================================================
+##                                                                                      ##
+##                                      Primo Piano                                     ##
+##                                                                                      ##
+##========================================================================================
+  finestre_primo_piano:
+    name: Finestre Primo Piano
+    icon: mdi:blinds-vertical
+    entities:
+      - binary_sensor.finestra_camera_alessandro_contact #
+      - binary_sensor.porta_finestra_camera_alessandro_contact
+      - binary_sensor.finestra_camera_beatrice_contact #
+      - binary_sensor.finestra_bagno_beatrice_e_alessandro_contact
+
+# 
+#   ____               _                  
+#  |  _ \ ___ _ __ ___(_) __ _ _ __   ___ 
+#  | |_) / _ \ '__/ __| |/ _` | '_ \ / _ \
+#  |  __/  __/ |  \__ \ | (_| | | | |  __/
+#  |_|   \___|_|  |___/_|\__,_|_| |_|\___|
+#                                         
+# 
+
+
+##========================================================================================
+##                                                                                      ##
+##                                         Casa                                         ##
+##                                                                                      ##
+##========================================================================================
+  persiane_casa:
+    name: Persiane Casa
+    entities:
+      - binary_sensor.persiana_porta_finestra_soggiorno_taverna_alfonsi
+      - binary_sensor.persiana_porta_finestra_soggiorno_taverna_baldini
+      - binary_sensor.persiana_porta_finestra_cucina
+      - binary_sensor.persiana_porta_finestra_soggiorno_divano
+      - binary_sensor.persiana_porta_finestra_soggiorno_giardino
+      - binary_sensor.tenda_oscurante_giovanna_e_nicola_contact
+      - binary_sensor.persiana_finestra_camera_alessandro
+      - binary_sensor.persiana_porta_finestra_camera_alessandro
+      - binary_sensor.persiana_finestra_camera_beatrice
+      - binary_sensor.persiana_finestra_bagno_beatrice_alessandro
+
+##========================================================================================
+##                                                                                      ##
+##                                        Taverna                                       ##
+##                                                                                      ##
+##========================================================================================
+  persiane_taverna:
+    name: Persiane Taverna
+    entities:
+      - binary_sensor.persiana_porta_finestra_soggiorno_taverna_alfonsi
+      - binary_sensor.persiana_porta_finestra_soggiorno_taverna_baldini
+
+##========================================================================================
+##                                                                                      ##
+##                                      Piano Terra                                     ##
+##                                                                                      ##
+##========================================================================================
+  persiane_piano_terra:
+    name: Persiane Piano Terra
+    entities:
+      - binary_sensor.persiana_porta_finestra_cucina
+      - binary_sensor.persiana_porta_finestra_soggiorno_divano
+      - binary_sensor.persiana_porta_finestra_soggiorno_giardino
+      - binary_sensor.tenda_oscurante_giovanna_e_nicola_contact
+
+##========================================================================================
+##                                                                                      ##
+##                                      Primo Piano                                     ##
+##                                                                                      ##
+##========================================================================================
+  persiane_primo_piano:
+    name: Persiane Primo Piano
+    entities:
+      - binary_sensor.persiana_finestra_camera_alessandro
+      - binary_sensor.persiana_porta_finestra_camera_alessandro
+      - binary_sensor.persiana_finestra_camera_beatrice
+      - binary_sensor.persiana_finestra_bagno_beatrice_alessandro
+
+
+# 
+#   ____                   _       _ _ _ 
+#  / ___| _ __   ___  _ __| |_ ___| | (_)
+#  \___ \| '_ \ / _ \| '__| __/ _ \ | | |
+#   ___) | |_) | (_) | |  | ||  __/ | | |
+#  |____/| .__/ \___/|_|   \__\___|_|_|_|
+#        |_|                             
+# 
+  
+  sportelli_elettrodomestici:
+    name: Sportelli Elettrodomestici
+    entities:
+      - binary_sensor.sportello_freezer_contact
+      - binary_sensor.sportello_frigo_contact
+      - binary_sensor.sportello_asciugatrice_contact
+      - binary_sensor.sportello_lavatrice_contact
+      - binary_sensor.siemens_hn678g4s6_68a40e118878_bsh_common_status_doorstate
+      - binary_sensor.siemens_sn678x36te_68a40e1172df_bsh_common_status_doorstate
+  
+# 
+#   ____        _   _            _      
+#  | __ )  __ _| |_| |_ ___ _ __(_) ___ 
+#  |  _ \ / _` | __| __/ _ \ '__| |/ _ \
+#  | |_) | (_| | |_| ||  __/ |  | |  __/
+#  |____/ \__,_|\__|\__\___|_|  |_|\___|
+#                                       
+# 
+
+  batterie:
+    name: Batterie
+    entities:
+      - sensor.porta_finestra_soggiorno_divano_battery
+      - sensor.vibrazione_wc_giovanna_e_nicola_battery
+      - sensor.sensore_sedia_nicola_battery
+      - sensor.movimento_scale_taverna_battery
+      - sensor.sportello_asciugatrice_battery
+      - sensor.porta_bagno_giovanna_e_nicola_battery
+      - sensor.porta_doccia_bagno_giovanna_e_nicola_battery
+      - sensor.porta_finestra_soggiorno_giardino_battery
+      - sensor.movimento_porta_ingresso_battery
+      - sensor.movimento_cabina_armadio_battery
+      - sensor.movimento_doccia_bagno_giovanna_e_nicola_battery
+      - sensor.sportello_lavastoviglie_battery
+      - sensor.bottone_gestione_scenari_giardino_battery
+      - sensor.finestra_bagno_beatrice_e_alessandro_battery
+      - sensor.movimento_alessandro_pavimento_battery
+      - sensor.porta_casa_battery
+      - sensor.sensore_luminosita_esterna_battery
+      - sensor.cubo_battery
+      - sensor.bottone_gestione_accessi_battery
+      - sensor.porta_finestra_cucina_battery
+      - sensor.movimento_termoarredo_camera_giovanna_e_nicola_battery
+      - sensor.tenda_oscurante_giovanna_e_nicola_battery
+      - sensor.porta_camera_alessandro_battery
+      - sensor.porta_camera_beatrice_battery
+      - sensor.porta_finestra_camera_alessandro_battery
+      - sensor.sportello_frigo_battery
+      - sensor.finestra_camera_beatrice_battery
+      - sensor.porta_garage_battery
+      - sensor.bottone_luci_natale_battery
+      - sensor.bottone_scenari_luci_soggiorno_battery
+      - sensor.bottone_gestione_scenari_wc_giovanna_e_nicola_battery
+      - sensor.bottone_gestione_scenari_doccia_giovanna_e_nicola_battery
+      - sensor.bottone_gestione_scenari_wc_beatrice_e_alessandro_battery
+      - sensor.bottone_gestione_scenari_doccia_beatrice_e_alessandro_battery
+      - sensor.presenza_tavolo_soggiorno_lato_cucina_battery
+      - sensor.6puntini_battery
+      - sensor.cucina_movimento_cucina_battery_level
+      - sensor.giardino_ingresso_contatto_cancello_battery_level
+      - sensor.soggiorno_area_tavolo_movimento_tavolo_soggiorno_battery_level
+      - sensor.movimento_cucina_battery_level
+      - sensor.contatto_cancello_battery_level
+      - sensor.movimento_tavolo_soggiorno_battery_level
+      - sensor.vibrazione_wc_beatrice_e_alessandro_battery
+      - sensor.nuki_porta_di_casa_battery
+      - sensor.viomi_v18_6d6b_battery_level
+      - sensor.movimento_camera_beatrice_battery
+      - sensor.iphone_di_nicola_battery_level
+      - sensor.movimento_alessandro_battery
+      - sensor.ipad_di_nicola_battery_level
+      - sensor.macbook_air_di_nicola_battery_state
+      - sensor.apple_watch_di_giovanna_battery_state
+      - sensor.iphone_battery_state
+      - sensor.movimento_bagno_beatrice_e_alessandro_wc_battery
+      - sensor.movimento_bagno_beatrice_e_alessandro_ingresso_battery
+      - sensor.porta_bagno_beatrice_e_alessandro_battery
+      - sensor.sensore_ht_bagno_beatrice_e_alessandro_battery
+      - sensor.sensore_ht_frigo_battery
+      - sensor.sensore_ht_freezer_battery
+      - sensor.sportello_freezer_battery
+      - sensor.porta_finestra_soggiorno_taverna_baldini_battery
+      - sensor.porta_finestra_soggiorno_taverna_alfonsi_battery
+      - sensor.porta_scale_taverna_battery
+      - sensor.finestra_camera_alessandro_battery
+      - sensor.dimmer_beatrice_battery
+      - sensor.dimmer_alessandro_battery
+      - sensor.movimento_bagno_giovanna_nicola_battery
+      - sensor.movimento_pianerottolo_battery
+      - sensor.movimento_bagno_bea_e_ale_battery
+      - sensor.movimento_soggiorno_z_divano_battery
+      - sensor.dimmer_nicola_battery
+      - sensor.movimento_alessandro_battery_2
+      - sensor.dimmer_giovanna_battery
+      - sensor.movimento_scale_soggiorno_battery
+      - sensor.movimento_camera_gio_e_nic_battery
+      - sensor.movimento_letto_nicola_battery
+      - sensor.movimento_beatrice_battery
+      - sensor.movimento_letto_giovanna_battery
+      - sensor.presa_lampada_sale_battery
+  
+# 
+#     _               _ 
+#    | |   _   _  ___(_)
+#    | |  | | | |/ __| |
+#    | |__| |_| | (__| |
+#    |_____\__,_|\___|_|
+#                       
+# 
+
+  luci:
+    name: Luci
+    entities:
+      - light.faretto_ingresso_bagno
+      - light.luce_wc
+      - light.luce_doccia
+      - light.bagno_beatrice_e_alessandro
+      - light.luce_bagno
+      - light.led_bagno
+      - light.luce_beatrice
+      - light.luce_candela_1
+      - light.luce_candela_2
+      - light.luce_candela_3
+      - light.luce_candela_4
+      - light.luce_candela_5
+      - light.camera_beatrice
+      - light.luce_alessandro
+      - light.faretto_letto_alessandro
+      - light.faretto_armadio_alessandro
+      - light.camera_alessandro
+      - light.luce_comodino_alesandro
+      - light.led_letto_alessandro
+      - light.faretti_esterno_cabina_armadio
+      - light.faretti_interno_cabina_armadio
+      - light.faretti_idromassaggio
+      - light.interruttore_faretti_letto
+      - light.faretto_letto
+      - light.faretto_piedi_letto
+      - light.faretto_idromassaggio
+      - light.faretto_testa_letto
+      - light.faretto_ingresso_bagno
+      - light.lampada_sale
+      - light.led_letto_giovanna_e_nicola
+      - light.led_pensili
+      - light.luce_cucina
+      - light.luce_cucina_2
+      - light.cucina
+      - light.luce_garage
+      - light.luce_cancelletto
+      - light.luce_esterno_ingresso
+      - light.luce_ingresso_2
+      - light.luce_segnapassi
+      - light.giardino_avanti
+      - light.luce_esterno_taverna
+      - light.luce_esterno_cucina
+      - light.luce_esterno_soggiorno
+      - light.giardino_dietro
+      - light.luce_lavanderia
+      - light.faretto_scale_soggiorno
+      - light.faretto_pianerottolo
+      - light.scale_soggiorno
+      - light.luce_porta_garage
+      - light.lampada_scrivania_nicola
+      - light.luce_cespuglio_divano
+      - light.luce_cespuglio_ingresso
+      - light.lampada_planet
+      - light.luce_scale_taverna
+
+# 
+#   __  __            _                      _        
+#  |  \/  | _____   _(_)_ __ ___   ___ _ __ | |_ ___  
+#  | |\/| |/ _ \ \ / / | '_ ` _ \ / _ \ '_ \| __/ _ \ 
+#  | |  | | (_) \ V /| | | | | | |  __/ | | | || (_) |
+#  |_|  |_|\___/ \_/ |_|_| |_| |_|\___|_| |_|\__\___/ 
+#                                                     
+# 
+

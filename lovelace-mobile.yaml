@@ -1,0 +1,82 @@
+# lovelace_gen
+sidebar:
+  sidebarMenu:
+    - action: navigate
+      navigation_path: "/lovelace/mirror"
+      name: "mirror"
+      active: true
+    - action: navigate
+      navigation_path: "/lovelace/mobile"
+      name: "mobile"
+    - action: navigate
+      navigation_path: "/lovelace/tablet"
+      name: "tablet"
+    - action: toggle
+      entity: light.cespuglio_divano
+      name: Cespu
+      state: light.cespuglio_divano
+      icon: mdi:led-strip-variant
+title: Bracciano
+views:
+  - path: mobile
+    title: Home
+    cards:
+{% set lights = ['light.cespuglio_divano', 'light.cespuglio_ingresso'] %}
+      - type: entities
+        entities:
+        {% for l in lights %}
+        - {{ l }}
+        {% endfor %}
+
+      - type: horizontal-stack
+        cards:
+        {% for l in lights %}
+        - type: light
+          entity: {{ l }}
+        {% endfor %}
+      - type: entities
+        entities:
+          - light.luce_letto_alessandro
+          - light.luce_armadio_alessandro
+          - binary_sensor.persiana_porta_finestra_alessandro_contact
+          - sensor.persiana_porta_finestra_alessandro_linkquality
+          - binary_sensor.porta_finestra_alessandro_contact
+          - sensor.porta_finestra_alessandro_linkquality
+          - binary_sensor.finestra_alessandro_contact
+          - sensor.finestra_alessandro_linkquality
+          - binary_sensor.persiana_finestra_alessandro_contact
+          - sensor.persiana_finestra_alessandro_linkquality
+          - remote.harmony_hub_ale
+          - switch.fire_tv_alessandro_do_not_disturb_switch
+          - switch.echo_dot_alessandro_do_not_disturb_switch
+          - switch.echo_dot_alessandro_shuffle_switch
+          - switch.echo_dot_alessandro_repeat_switch
+          - sensor.fire_tv_alessandro_next_alarm
+          - sensor.fire_tv_alessandro_next_timer
+          - sensor.fire_tv_alessandro_next_reminder
+          - sensor.echo_dot_alessandro_next_alarm
+          - sensor.echo_dot_alessandro_next_timer
+          - sensor.echo_dot_alessandro_next_reminder
+          - binary_sensor.pavimento_alessandro_occupancy
+          - sensor.pavimento_alessandro_linkquality
+          - switch.harmony_hub_ale_xbox
+          - switch.harmony_hub_ale_wii
+          - switch.harmony_hub_ale_guarda_tv
+          - switch.harmony_hub_ale_luci_off
+          - switch.harmony_hub_ale_luci_on
+          - switch.harmony_hub_ale_fire_tv
+          - sensor.persiana_porta_finestra_alessandro_temperature
+          - sensor.porta_finestra_alessandro_temperature
+          - sensor.finestra_alessandro_temperature
+          - sensor.persiana_finestra_alessandro_temperature
+        title: Alessandro
+      - type: custom:thermostat-popup-card
+        entity: climate.alessandro
+      - type: media-control
+        entity: media_player.fire_tv_alessandro
+      - type: media-control
+        entity: media_player.echo_dot_alessandro
+      - type: entities
+        entities:
+          - light.luce_doccia_bagno_primo_piano
+          - light.luce_wc_bagno_prim
